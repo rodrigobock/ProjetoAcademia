@@ -1,0 +1,12 @@
+select 
+    tbt.N_IDTURMA as 'ID Turma',
+    tbt.T_DSCTURMA as 'Desc Turma',
+    tbt.N_MAXALUNOS as 'Max Alunos',
+    tbh.T_DCSHORARIO as 'Horario',
+    tbp.T_NOMEPROFESSOR as 'Professor',   
+    tbt.T_STATUS as 'Status'
+from 
+    tb_turmas as tbt
+INNER JOIN
+    tb_horarios as tbh on tbh.N_IDHORARIO = tbt.N_IDHORARIOS,
+    tb_professores as tbp on tbp.N_IDPROFESSOR = tbt.N_IDPROFESSOR
